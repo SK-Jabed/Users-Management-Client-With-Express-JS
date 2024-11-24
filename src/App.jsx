@@ -26,7 +26,14 @@ function App() {
         "content-type": "application/json"
       },
       body: JSON.stringify(user)
-    });
+    })
+      .then(res => res.json())
+      .then(data => {
+        console.log(data);
+        const newUsers = [...users, data]
+        setUsers(newUsers);
+        e.target.reset();
+      })
   }
 
   return (
@@ -49,4 +56,4 @@ function App() {
   )
 }
 
-export default App
+export default App;
