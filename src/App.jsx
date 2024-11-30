@@ -2,8 +2,6 @@ import { useState } from 'react';
 import './App.css';
 import { useEffect } from 'react';
 
-
-
 function App() {
   const [users, setUsers] = useState([]);
 
@@ -15,6 +13,7 @@ function App() {
 
   const handleAddUser = e => {
     e.preventDefault();
+    
     const name = e.target.name.value;
     const email = e.target.email.value;
 
